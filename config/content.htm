@@ -12,8 +12,11 @@
 <p style="padding-left: 30px;">Homework (30%) - 每週至少提交兩次與課程進度有關的內容, 完成後填回自評表單</p>
 <p style="padding-left: 30px;">Exam (40%) - 建立包含操作流程影片、心得以及提供檔案下載的網頁後填回自評表單</p>
 <p style="padding-left: 30px;">Final Report (30%) - 利用網頁內容進行簡報並提交 pdf 格式書面報告, 完成後填回自評表單</p>
-<p></p>
-<h1>Homework</h1>
+<h1>w1</h1>
+<p>from browser import ajax</p>
+<p># Fetch the file content<br/>def on_complete(req):<br/> content = req.text<br/> lines = content.split("\n")<br/> <br/> # Extract student numbers and GitHub names<br/> for line in lines:<br/> parts = line.split()<br/> if len(parts) == 2:<br/> stud_num, github_name = parts<br/> print(f"Student Number: {stud_num}, GitHub Name: {github_name}")</p>
+<p># Initiate the request<br/>req = ajax.ajax()<br/>req.bind("complete", on_complete)<br/>req.open("GET", "https://mde.tw/list/2a.txt", True)<br/>req.send()</p>
+<p>列出班上學號和github名稱</p><h1>Homework</h1>
 <p>作業 (30%)</p>
 <p>HW1 (5%): <span style="background-color: #ffff00;">建立由 Box 組成的平面四連桿機構 Webots 模擬場景</span></p>
 <p style="padding-left: 30px;">part1:</p>
