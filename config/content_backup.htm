@@ -296,7 +296,7 @@ doc["add1to100"].bind('click', add)
 <p><span><iframe allowfullscreen="allowfullscreen" height="314" src="//www.youtube.com/embed/QVQtFHqwzMc" width="560"></iframe></span></p>
 <p><span>遇到問題數字不能改之後</span></p>
 <p><span>點開appearance修改顏色那邊Material前面的a4-a8通通都要改</span></p>
-<p></p>
+<p><a href="/downloads/three_digit_counter (2).zip">three_digit_counter (2).zip</a></p>
 <p><span></span></p>
 <p><span><iframe allowfullscreen="allowfullscreen" height="314" src="//www.youtube.com/embed/wpXKl2ERBhI" width="560"></iframe></span></p>
 <p><span>這個比較麻煩</span></p>
@@ -309,13 +309,44 @@ doc["add1to100"].bind('click', add)
 <p style="padding-left: 30px;"><span>操作者可利用鍵盤特定按鍵控制投籃輪車的移動並發射投籃, 每投出一球後系統透過記分板進行計分, 並由送球機構進行補球或移動輪車取球, 遊戲可進行至全部數量籃球投完為止.</span></p>
 <p>請將期末協同專案執行過程、內容與心得, 製作成影片，配合字幕上傳至 Youtube 後嵌入各階段的期末報告頁面中.</p>
 <p>影片標題: <span style="background-color: #ffff00;">國立虎尾科技大學 - 機械設計工程系 - cd2025 期末報告 - 學員學號 - 各階段影片主題<br/></span></p>
-<p><span style="background-color: #ffff00;"></span></p>
+<p><span style="background-color: #ffff00;"><a href="/downloads/final.7z">final.7z</a></span></p>
 <p><span style="background-color: #ffff00;"></span></p>
 <p><span style="background-color: #ffff00;">1.<span>從webots叫出一台車子並進行編輯</span></span></p>
 <p><span style="background-color: #ffff00;">從add new /proto nodes/kuka/youbot/youbot(Robot)找到車子後右鍵convert to base nodes就可以去修改裡面的東西,然後再把機械手臂刪掉把平台變寬</span></p>
 <p><span style="background-color: #ffff00;"><iframe allowfullscreen="allowfullscreen" height="314" src="//www.youtube.com/embed/TKtliaUGWbo" width="560"></iframe></span></p>
 <p><span style="background-color: #ffff00;"></span></p>
-<p><span style="background-color: #ffff00;">2.</span></p><h1>Brython</h1>
+<p><span style="background-color: #ffff00;">2.新增籃球機放進來後調整位置放在車上,後續位置跑掉一直重複調整,發現整個籃球機會往下掉</span></p>
+<p><span style="background-color: #ffff00;">籃球網的車子不會動,更改了輪子的命名,調整輪子的速度為50</span></p>
+<p><span style="background-color: #ffff00;">調整youbot質量22密度-1</span></p>
+<p><span style="background-color: #ffff00;">球也不會動</span></p>
+<p><span style="background-color: #ffff00;"><iframe allowfullscreen="allowfullscreen" height="314" src="//www.youtube.com/embed/lJOhKfBEZfs" width="560"></iframe></span></p>
+<p><span style="background-color: #ffff00;">3.修改檢查了youbot/my proto/children/pose/shape後面所有名稱以便程式抓到,就連大小寫也有差</span></p>
+<p><span style="background-color: #ffff00;">stand裡面加了sensor後繼續排除命名問題尤其是有DEF或name的問題</span></p>
+<p><span style="background-color: #ffff00;">worldinfo/contact Properties/ContactProperties/frictionRotation(摩擦旋轉)這個要上下兩個一正一負</span></p>
+<p><span style="background-color: #ffff00;">讓籃球機產生順逆時針的摩擦係數</span></p>
+<p><span style="background-color: #ffff00;">球是透過DEF supervisor Robot控制程式召喚球出來的,不用把球設置出來</span></p>
+<p><span style="background-color: #ffff00;">調整了youbot得質量密度還更改了扭矩和速度發現攔機還是在原地彈球不會依循拋物線飛出去</span></p>
+<p><span style="background-color: #ffff00;">調整了joint123的質量密度才能有效擊球</span></p>
+<p><span style="background-color: #ffff00;">增加記分板大小改成4倍</span></p>
+<p><span style="background-color: #ffff00;">channel調成1:讓發射器（Emitter）和接收器（Receiver）之間，通過「相同頻道」來傳遞訊號。</span></p>
+<p><span style="background-color: #ffff00;"></span></p>
+<p><span style="background-color: #ffff00;">supervisor:</span></p>
+<ul>
+<li data-end="1154" data-start="1125">
+<p data-end="1154" data-start="1127">評估機器人演算法（如計算成功次數、自動記錄表現）</p>
+</li>
+<li data-end="1177" data-start="1155">
+<p data-end="1177" data-start="1157"> 機器人比賽裁判（如 RoboCup）</p>
+</li>
+<li data-end="1208" data-start="1178">
+<p data-end="1208" data-start="1180"> 資料收集（追蹤物體位置，輸出 CSV 或視覺資料）</p>
+</li>
+<li data-end="1232" data-start="1209">
+<p data-end="1232" data-start="1211"> 自動化訓練（重置場景、快速重複訓練）</p>
+</li>
+</ul>
+<p><span style="background-color: #ffff00;"><iframe allowfullscreen="allowfullscreen" height="314" src="//www.youtube.com/embed/w47hFUCtCcs" width="560"></iframe></span></p>
+<p></p><h1>Brython</h1>
 <p><button id="add1to100">1 add to 100</button></p>
 <!-- 導入 brython 程式庫 -->
 <p>
